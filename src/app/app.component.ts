@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PagingService } from './services/paging.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'jsonRequest';
+  constructor(public paging:PagingService){
+
+  }
+  navTo(name:string){
+    this.paging.currentPanel = name;
+  }
 }

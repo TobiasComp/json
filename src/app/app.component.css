@@ -1,0 +1,13 @@
+.navbar {
+    /* display: inline; */
+    background-color: lightblue;
+    padding: 20px;
+}
+.navbar-link{
+    display: inline;
+    cursor: pointer;
+    font-size: 25px;
+}
+.navbar-link:hover {
+    color: blue;
+}
