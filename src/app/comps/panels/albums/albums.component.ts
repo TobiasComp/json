@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Album } from '../../../models/album';
+import { AlbumService } from '../../../services/album.service';
+import { PagingService } from '../../../services/paging.service';
 
 @Component({
   selector: 'app-albums',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./albums.component.css']
 })
 export class AlbumsComponent implements OnInit {
-
-  constructor() { }
+  albums:Album[]=[]
+  constructor(public albumService:AlbumService, public paging:PagingService) { }
 
   ngOnInit() {
+    this.albumService.getUserAlbums()
+      .subscribe(data =>this.albums = data)
+    setTimeout(console.log,2000,[this.albums]);
+  }
+
+  showAlbumPhotos(album:Album){
+    this.albumService.currentAlbum = album;
+    this.paging.currentPanel = 'photos';
   }
 
 }

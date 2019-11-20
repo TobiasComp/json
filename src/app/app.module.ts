@@ -12,7 +12,11 @@ import { TodoComponent } from './comps/items/todo/todo.component';
 import { UserComponent } from './comps/items/user/user.component';
 import { UserOptionsComponent } from './comps/user-options/user-options.component';
 import { AlbumsComponent } from './comps/panels/albums/albums.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './comps/nav/nav.component';
+import { AlbumComponent } from './comps/items/album/album.component';
+import { PhotosComponent } from './comps/panels/photos/photos.component';
+import { PhotoComponent } from './comps/items/photo/photo.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,11 @@ import { HttpClientModule } from '@angular/common/http'
     TodoComponent,
     UserComponent,
     UserOptionsComponent,
-    AlbumsComponent
+    AlbumsComponent,
+    NavComponent,
+    AlbumComponent,
+    PhotosComponent,
+    PhotoComponent
   ],
   imports: [
     BrowserModule, HttpClientModule

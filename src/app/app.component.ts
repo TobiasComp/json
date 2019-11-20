@@ -11,7 +11,5 @@ export class AppComponent {
   constructor(public paging:PagingService){
 
   }
-  navTo(name:string){
-    this.paging.currentPanel = name;
-  }
+ 
 }

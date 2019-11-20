@@ -1,1 +1,9 @@
-<p>posts works!</p>
+<div >
+    <span style="color:chocolate">{{userService.currentUser.name}}'s Posts</span><br>
+    <ul class="panel-list">
+        <li *ngFor="let post of posts" (click)="showCommentsFunction(post)">
+            <app-post [pItem]="post"></app-post>
+        </li> 
+     </ul> 
+    
+</div>

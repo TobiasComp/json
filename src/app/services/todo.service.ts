@@ -7,13 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TodoService {
-  private api = "https://jsonplaceholder.typicode.com/todos/"
+  private api = "https://jsonplaceholder.typicode.com/todos/#";
   currentTodo:Todo
   constructor(private http:HttpClient) { 
     
   }
-  public getTodos():Observable<Todo[]>{
-    return this.http.get<Todo[]>(this.api);
+  public getTodos(todoId:number):Observable<Todo>{
+    let newApi = this.api.replace("#",todoId.toString());
+    return this.http.get<Todo>(newApi);
   }
 
 }

@@ -1,1 +1,11 @@
-<p>comments works!</p>
+<div class="current-post">
+    <span class="post-info"> Post Title:</span> {{commentService.currentPost.title}}<br>
+    <span class="post-info">  Post: </span>{{commentService.currentPost.body}}<br>
+</div>
+<div>
+    <ul class="panel-list">
+        <li *ngFor="let comment of comments">
+            {{comment.body}}
+        </li>
+    </ul>
+</div>

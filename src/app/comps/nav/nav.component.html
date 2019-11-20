@@ -1,0 +1,19 @@
+
+
+
+<div class="navbar">
+    <ul class="link-list" >
+        <li class="navbar-link" (click)="navTo('users')"
+            [ngClass]="paging.currentPanel=='users' ? 'active' : '' ">Users</li>&nbsp;&nbsp;
+        <li class="navbar-link" (click)="navTo('todos')"
+            >Todos</li>&nbsp;&nbsp;
+        <li class="navbar-link" (click)="navTo('posts')">Posts</li>&nbsp;&nbsp;
+        <li class="navbar-link" (click)="navTo('albums')">Albums</li>&nbsp;&nbsp;
+        <li class="navbar-link" (click)="navTo('photos')">Photos</li>&nbsp;&nbsp;
+    </ul>
+    <div *ngIf="userService.currentUser">
+        Current User:<span class="user-info">{{userService.currentUser.name}}</span> 
+        Current UserId: <span class="user-info">{{userService.currentUser.id}}</span>
+    </div>
+</div>
+<!-- [ngClass]="paging.currentPanel=='todos' ? 'active' : '' " -->

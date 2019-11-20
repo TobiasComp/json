@@ -1,7 +1,7 @@
-<div id="tasks" [class]="divClassValue">
+<div id="tasks" *ngIf="todoService.currentTodo" >
     
     <app-todo [todo]="todoService.currentTodo"></app-todo>
 
-    <span [class]="spanClassValue"></span>
+    <span ></span>
     <button (click)="next()">next</button>     
 </div>

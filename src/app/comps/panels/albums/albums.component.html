@@ -1,1 +1,8 @@
-<p>albums works!</p>
+<div>
+    
+        <ul class="panel-list">
+            <li *ngFor="let album of albums" (click)="showAlbumPhotos(album)">
+                <app-album [albumItem]="album"></app-album>
+            </li>
+        </ul>
+    </div>

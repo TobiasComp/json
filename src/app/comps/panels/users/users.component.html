@@ -1,7 +1,7 @@
 
 <h1>Select a User</h1>
 <ul class="panel-list">
-    <li *ngFor="let user of users" (click)="chooseUser(user)">
+    <li *ngFor="let user of users" (click)="chooseUser(user)" >
         <app-user [currentUser]="user"></app-user>
     </li>
 </ul>

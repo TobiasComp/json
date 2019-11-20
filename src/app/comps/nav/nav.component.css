@@ -1,0 +1,23 @@
+.navbar {
+    /* display: inline; */
+    background-color: rgba(37, 212, 254, 0.45);
+    padding: 20px;
+}
+.navbar-link{
+    display: inline;
+    cursor: pointer;
+    font-size: 25px;
+}
+.navbar-link:hover {
+    color: chocolate;
+}
+.link-list{
+    padding-left: 0;
+}
+.user-info{
+    color: chocolate;
+}
+
+.active {
+    background-color: chocolate;
+}

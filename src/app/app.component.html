@@ -1,15 +1,12 @@
 
 <h1>Welcome To The JSON Placeholder Database</h1>
-<ul class="navbar">
-  <li class="navbar-link" (click)="navTo('users')">Users</li>&nbsp;&nbsp;
-  <li class="navbar-link" (click)="navTo('todos')">Todos</li>&nbsp;&nbsp;
-  <li class="navbar-link" (click)="navTo('posts')">Posts</li>&nbsp;&nbsp;
-  <li class="navbar-link" (click)="navTo('albums')">Albums</li>&nbsp;&nbsp;
-  <li class="navbar-link" (click)="navTo('photos')">Photos</li>&nbsp;&nbsp;
-</ul>
+
+<app-nav></app-nav>
 
 <app-users *ngIf = "paging.currentPanel=='users'"></app-users>
 <app-user-options *ngIf = "paging.currentPanel=='userOptions'"></app-user-options>
 <app-todos *ngIf = "paging.currentPanel=='todos'"></app-todos>
 <app-posts *ngIf = "paging.currentPanel=='posts'"></app-posts>
 <app-albums *ngIf = "paging.currentPanel=='albums'"></app-albums>
+<app-photos *ngIf = "paging.currentPanel=='photos'"></app-photos>
+<app-comments *ngIf = "paging.currentPanel == 'comments'"></app-comments>
