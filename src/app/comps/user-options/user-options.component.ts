@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PagingService } from 'src/app/services/paging.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-options',
@@ -8,11 +9,13 @@ import { PagingService } from 'src/app/services/paging.service';
 })
 export class UserOptionsComponent implements OnInit {
 
-  constructor(public paging:PagingService) { }
+  constructor(public paging:PagingService, public router:Router) { }
 
   ngOnInit() {
   }
   navTo(panel:string){
-    this.paging.currentPanel = panel;
+    // this.paging.currentPanel = panel;
+    this.router.navigateByUrl(`/${panel}`);
+
   }
 }

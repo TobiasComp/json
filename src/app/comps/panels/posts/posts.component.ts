@@ -4,6 +4,7 @@ import { Post } from '../../../models/post';
 import { UserService } from '../../../services/user.service';
 import { PagingService } from '../../../services/paging.service';
 import { CommentService } from '../../../services/comment.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -12,7 +13,7 @@ import { CommentService } from '../../../services/comment.service';
 })
 export class PostsComponent implements OnInit {
   posts:Post[] = []
-  constructor(public postService:PostService,public userService:UserService, public paging:PagingService, public commentService:CommentService) {
+  constructor(public router:Router, public postService:PostService,public userService:UserService, public paging:PagingService, public commentService:CommentService) {
     
     
    }
@@ -29,7 +30,9 @@ export class PostsComponent implements OnInit {
 
   showCommentsFunction(post:Post){
     this.commentService.currentPost = post;
-    this.paging.currentPanel = 'comments';
+    // this.paging.currentPanel = 'comments';
+    this.router.navigateByUrl('/comments');
+
     
   }
 }

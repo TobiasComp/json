@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PagingService } from '../../services/paging.service';
 import { UserService } from '../../services/user.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,7 +10,7 @@ import { UserService } from '../../services/user.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(public paging:PagingService, public userService:UserService) { }
+  constructor(public paging:PagingService, public userService:UserService, public loginService:LoginService) { }
 
   ngOnInit() {
   }

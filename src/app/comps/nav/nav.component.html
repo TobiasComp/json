@@ -3,17 +3,35 @@
 
 <div class="navbar">
     <ul class="link-list" >
-        <li class="navbar-link" (click)="navTo('users')"
-            [ngClass]="paging.currentPanel=='users' ? 'active' : '' ">Users</li>&nbsp;&nbsp;
-        <li class="navbar-link" (click)="navTo('todos')"
-            >Todos</li>&nbsp;&nbsp;
-        <li class="navbar-link" (click)="navTo('posts')">Posts</li>&nbsp;&nbsp;
-        <li class="navbar-link" (click)="navTo('albums')">Albums</li>&nbsp;&nbsp;
-        <li class="navbar-link" (click)="navTo('photos')">Photos</li>&nbsp;&nbsp;
+        <a class="navbar-link" routerLink="/login" routerLinkActive="active">Login</a>&nbsp;&nbsp;
+
+        <!-- <li class="navbar-link" (click)="navTo('users')"
+            [ngClass]="paging.currentPanel=='users' ? 'active' : '' ">Users</li>&nbsp;&nbsp; -->
+        <a class="navbar-link" routerLink="/users" routerLinkActive="active">Users</a>&nbsp;&nbsp;
+        <!-- <li class="navbar-link" (click)="navTo('todos')"
+            [ngClass]="paging.currentPanel=='todos' ? 'active' : '' " >Todos</li>&nbsp;&nbsp; -->
+        <a class="navbar-link" routerLink="/todos" routerLinkActive="active">Todos</a>&nbsp;&nbsp;
+    
+        <!-- <li class="navbar-link" (click)="navTo('posts')"
+            [ngClass]="paging.currentPanel=='posts' ? 'active' : '' ">Posts</li>&nbsp;&nbsp; -->
+        <a class="navbar-link" routerLink="/posts" routerLinkActive="active">Posts</a>&nbsp;&nbsp;
+
+        <!-- <li class="navbar-link" (click)="navTo('albums')"
+            [ngClass]="paging.currentPanel=='albums' ? 'active' : '' ">Albums</li>&nbsp;&nbsp; -->
+        <a class="navbar-link" routerLink="/albums" routerLinkActive="active">Albums</a>&nbsp;&nbsp;
+
+        <!-- <li class="navbar-link" (click)="navTo('photos')"
+            [ngClass]="paging.currentPanel=='photos' ? 'active' : '' ">Photos</li>&nbsp;&nbsp; -->
+        <a class="navbar-link" routerLink="/photos" routerLinkActive="active">Photos</a>&nbsp;&nbsp;
+
     </ul>
-    <div *ngIf="userService.currentUser">
-        Current User:<span class="user-info">{{userService.currentUser.name}}</span> 
-        Current UserId: <span class="user-info">{{userService.currentUser.id}}</span>
+    <div >
+        <span *ngIf="userService.currentUser">
+            Current User:<span class="user-info">{{userService.currentUser.name}}</span> 
+            Current UserId: <span class="user-info">{{userService.currentUser.id}}</span>
+        </span>
+        <span class="signed-in">Hi! Mr. {{loginService. currentSignIn}}</span>
+
     </div>
+
 </div>
-<!-- [ngClass]="paging.currentPanel=='todos' ? 'active' : '' " -->

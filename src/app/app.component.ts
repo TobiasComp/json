@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PagingService } from './services/paging.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { PagingService } from './services/paging.service';
 })
 export class AppComponent {
   title = 'jsonRequest';
-  constructor(public paging:PagingService){
+  constructor(public paging:PagingService, public router:Router){
 
   }
  

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Album } from '../../../models/album';
 import { AlbumService } from '../../../services/album.service';
 import { PagingService } from '../../../services/paging.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-albums',
@@ -10,7 +11,7 @@ import { PagingService } from '../../../services/paging.service';
 })
 export class AlbumsComponent implements OnInit {
   albums:Album[]=[]
-  constructor(public albumService:AlbumService, public paging:PagingService) { }
+  constructor(public albumService:AlbumService, public paging:PagingService,public router:Router) { }
 
   ngOnInit() {
     this.albumService.getUserAlbums()
@@ -20,7 +21,9 @@ export class AlbumsComponent implements OnInit {
 
   showAlbumPhotos(album:Album){
     this.albumService.currentAlbum = album;
-    this.paging.currentPanel = 'photos';
+    // this.paging.currentPanel = 'photos';
+    this.router.navigateByUrl('/photos');
+
   }
 
 }

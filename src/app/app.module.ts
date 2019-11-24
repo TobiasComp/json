@@ -16,7 +16,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './comps/nav/nav.component';
 import { AlbumComponent } from './comps/items/album/album.component';
 import { PhotosComponent } from './comps/panels/photos/photos.component';
-import { PhotoComponent } from './comps/items/photo/photo.component'
+import { PhotoComponent } from './comps/items/photo/photo.component';
+import { LoginComponent } from './comps/panels/login/login.component'
+import { FormsModule } from '@angular/forms'
+import { RouterModule,Routes } from '@angular/router'
+
+const appRoutes: Routes = [
+  { path: 'users', component: UsersComponent},
+  { path: 'todos', component: TodosComponent},
+  { path: 'posts', component: PostsComponent},
+  { path: 'albums', component: AlbumsComponent},
+  { path: 'photos', component: PhotosComponent},
+  { path: 'comments', component: CommentsComponent},
+  { path: 'userOptions', component: UserOptionsComponent},
+  { path: 'login', component: LoginComponent},
+
+
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,10 +49,14 @@ import { PhotoComponent } from './comps/items/photo/photo.component'
     NavComponent,
     AlbumComponent,
     PhotosComponent,
-    PhotoComponent
+    PhotoComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule, HttpClientModule, FormsModule,RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

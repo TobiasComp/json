@@ -3,10 +3,16 @@
 
 <app-nav></app-nav>
 
-<app-users *ngIf = "paging.currentPanel=='users'"></app-users>
-<app-user-options *ngIf = "paging.currentPanel=='userOptions'"></app-user-options>
-<app-todos *ngIf = "paging.currentPanel=='todos'"></app-todos>
-<app-posts *ngIf = "paging.currentPanel=='posts'"></app-posts>
+
+
+
+
+<!-- <app-login *ngIf = "paging.currentPanel=='login'" ></app-login> -->
+<!-- <app-users *ngIf = "paging.currentPanel=='users'"></app-users> -->
+<router-outlet></router-outlet>
+<!-- <app-user-options *ngIf = "paging.currentPanel=='userOptions'"></app-user-options> -->
+<!-- <app-todos *ngIf = "paging.currentPanel=='todos'"></app-todos> -->
+<!-- <app-posts *ngIf = "paging.currentPanel=='posts'"></app-posts>
 <app-albums *ngIf = "paging.currentPanel=='albums'"></app-albums>
 <app-photos *ngIf = "paging.currentPanel=='photos'"></app-photos>
-<app-comments *ngIf = "paging.currentPanel == 'comments'"></app-comments>
+<app-comments *ngIf = "paging.currentPanel == 'comments'"></app-comments> -->
