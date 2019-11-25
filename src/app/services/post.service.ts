@@ -20,4 +20,11 @@ export class PostService {
     return this.http.get<Post[]>(this.api);
   }
 
+  public getLastPosts():Observable<Post[]>{
+    let newApi = "https://jsonplaceholder.typicode.com/posts?";
+    for (let i=90; i < 100; i++)
+      newApi += `id=${i}&`
+    return this.http.get<Post[]>(newApi);
+  }
+
 }

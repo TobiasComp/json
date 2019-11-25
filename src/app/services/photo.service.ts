@@ -17,4 +17,13 @@ export class PhotoService {
       this.apiByAlbum.replace("#",this.albumService.currentAlbum.userId.toString())
     )
   }
+
+  public getLastPhotos():Observable<Photo[]>{
+    let newApi = "https://jsonplaceholder.typicode.com/photos?"
+    for (let i=4990; i<5000; i++)
+      newApi += `id=${i}&`
+      console.log("This is the api",newApi);
+      
+    return this.http.get<Photo[]>(newApi);
+  }
 }

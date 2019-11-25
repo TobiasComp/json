@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from '../../../models/post';
 import { CommentService } from '../../../services/comment.service';
+import { PostComment } from '../../../models/comment';
 
 @Component({
   selector: 'app-comments',
@@ -8,7 +9,7 @@ import { CommentService } from '../../../services/comment.service';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
-comments:Comment[] = []
+comments:PostComment[] = []
   constructor(public commentService:CommentService) { }
 
   ngOnInit() {

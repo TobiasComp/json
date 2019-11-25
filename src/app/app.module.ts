@@ -19,7 +19,8 @@ import { PhotosComponent } from './comps/panels/photos/photos.component';
 import { PhotoComponent } from './comps/items/photo/photo.component';
 import { LoginComponent } from './comps/panels/login/login.component'
 import { FormsModule } from '@angular/forms'
-import { RouterModule,Routes } from '@angular/router'
+import { RouterModule,Routes } from '@angular/router';
+import { HomeComponent } from './comps/panels/home/home.component'
 
 const appRoutes: Routes = [
   { path: 'users', component: UsersComponent},
@@ -30,6 +31,8 @@ const appRoutes: Routes = [
   { path: 'comments', component: CommentsComponent},
   { path: 'userOptions', component: UserOptionsComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'home', component: HomeComponent},
+
 
 
 ]
@@ -50,12 +53,13 @@ const appRoutes: Routes = [
     AlbumComponent,
     PhotosComponent,
     PhotoComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     )
   ],
   providers: [],

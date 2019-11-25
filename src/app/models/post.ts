@@ -1,3 +1,5 @@
+import { PostComment } from 'src/app/models/comment';
+
 // "userId": 1,
 //     "id": 1,
 //     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
@@ -8,4 +10,5 @@ export class Post {
     "id": number
     "title": string
     "body": string
+    comments: PostComment[]
 }

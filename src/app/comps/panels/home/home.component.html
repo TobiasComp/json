@@ -1,0 +1,34 @@
+<div class="slider-div" *ngIf="lastPhotos">
+    <ul class="slider-ul">
+        <li class="slider-li " *ngFor="let photo of lastPhotos">
+            <img [src]="photo.thumbnailUrl" alt="">
+        </li>
+    </ul>
+</div>
+
+ <!-- <ul *ngIf="lastPhotos" class="gallery relative">
+        <li class="absolute gallery-item w3-animate-zoom  my-index-{{shuki}}" 
+            *ngFor="let pic of lastPhotos; index as shuki">
+            <div class="absolute gallery-text"> 
+                {{pic.id}} - {{pic.title}} 
+            </div>
+            <img class="gallery-img" [src]="pic.url"/>
+        </li>
+    </ul>
+     -->
+
+
+<div class="choco posts-title-div">
+    LAST POSTS
+</div>
+<div *ngIf="lastPosts">
+    <ul *ngFor="let post of lastPosts">
+        <span class="choco">Post Title:</span> {{ post.title }}
+        
+
+        <li *ngFor = "let comment of post.comments">
+            {{ comment.body}}
+        </li>
+    </ul>
+    
+</div>
