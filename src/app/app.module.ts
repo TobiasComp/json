@@ -20,18 +20,25 @@ import { PhotoComponent } from './comps/items/photo/photo.component';
 import { LoginComponent } from './comps/panels/login/login.component'
 import { FormsModule } from '@angular/forms'
 import { RouterModule,Routes } from '@angular/router';
-import { HomeComponent } from './comps/panels/home/home.component'
+import { HomeComponent } from './comps/panels/home/home.component';
+import { AngularLifecycleComponent } from './comps/panels/angular-lifecycle/angular-lifecycle.component';
+import { HookSonComponent } from './comps/hook-son/hook-son.component';
+import { HookGrandsonComponent } from './comps/hook-grandson/hook-grandson.component'
+import { UserExistsService } from './services/guards/user-exists.service';
 
 const appRoutes: Routes = [
   { path: 'users', component: UsersComponent},
-  { path: 'todos', component: TodosComponent},
-  { path: 'posts', component: PostsComponent},
-  { path: 'albums', component: AlbumsComponent},
+  { path: 'todos', component: TodosComponent, canActivate: [UserExistsService]},
+  { path: 'posts', component: PostsComponent, canActivate: [UserExistsService] },
+  { path: 'albums', component: AlbumsComponent, canActivate: [UserExistsService]},
   { path: 'photos', component: PhotosComponent},
   { path: 'comments', component: CommentsComponent},
   { path: 'userOptions', component: UserOptionsComponent},
   { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent},
+  { path: 'angularLifecycle', component: AngularLifecycleComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+
 
 
 
@@ -54,7 +61,10 @@ const appRoutes: Routes = [
     PhotosComponent,
     PhotoComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    AngularLifecycleComponent,
+    HookSonComponent,
+    HookGrandsonComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,RouterModule.forRoot(

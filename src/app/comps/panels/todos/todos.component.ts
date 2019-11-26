@@ -28,7 +28,7 @@ export class TodosComponent implements OnInit {
   }
 
   next(){
-    this.todoService.getTodos(this.index).subscribe(data=>this.todoService.currentTodo =data);
+    this.todoService.getTodos(this.index).subscribe(data=>this.todoService.currentTodo = data);
     this.index++;
   }
 }
