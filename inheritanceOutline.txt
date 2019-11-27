@@ -1,0 +1,26 @@
+posts
+posts?userId=1
+
+
+
+
+
+1. There are 2 types of get requests:
+	1) get all the stuff 
+	2) get a specific users stuff
+
+2. 1 service that returns an Observable of the base model
+
+3. Each model extends the base model
+
+4. 1 base component that knows how to listen to each type
+	(and has fields with the data)
+
+List of Components
+nav, user-options
+panels > users, todos, posts, albums
+List of Services
+services > base
+models
+base, user, post, todo, album
+	
